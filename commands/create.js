@@ -41,7 +41,7 @@ module.exports = class Create extends Command {
         const reply = await message.reply(embed.setDescription(`Seu canal de ajuda foi criado!\nClique aqui => ${c}`))
 
         const msg = await c.send(`${message.author}, espere até que algum de nossos ${role} ou um de nossos ${role1} venha até aqui!`, embed.setDescription(`${message.author} criou este canal!`))
-        await c.setTopic(`Após acabar, clique na reação :x: ou use o comando **${process.env.PREFIX}close** para fechar o canal!`)
+        await c.setTopic(`Após acabar, clique na reação :x: para fechar o canal!`)
         await msg.react('❌')
         const filter = (r, u) => r.me && message.guild.member(u.id).roles.some(r => r.name === role.name || r.name === role1.name)
         const collector = new ReactionCollector(msg, filter, { maxUsers: 1, maxEmojis: 1 })
