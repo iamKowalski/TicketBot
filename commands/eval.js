@@ -1,4 +1,4 @@
-const { Command } = require('../../utils')
+const { Command } = require('../utils')
 const { inspect } = require('util')
 
 module.exports = class Eval extends Command {
